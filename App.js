@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import Login from './view/components/login'
 import Landing from './view/landing/landing'
+import ShopListing from './view/shoplisting/shoplisting'
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,10 @@ export default class App extends React.Component {
             name='Landing'
             component={Landing}
           />
+          <Stack.Screen
+            name='ShopListing'
+            component={ShopListing}
+            />
         </Stack.Navigator>
       </NavigationContainer>
     );
