@@ -9,7 +9,7 @@ import {
     Form
 } from 'react-bootstrap'
 
-export default class ShopListing extends React.Component {
+export default class CoffeeListing extends React.Component {
     render() {
         const style = { 
             btn: {

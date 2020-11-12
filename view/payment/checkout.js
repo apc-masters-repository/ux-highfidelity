@@ -11,7 +11,7 @@ import {
 
 import { styles } from '../style'
 
-export default class Landing extends React.Component {
+export default class Checkout extends React.Component {
     
 
     render() {
@@ -43,11 +43,7 @@ export default class Landing extends React.Component {
                 <tr>
                     <td>
                         <Col style={style.cardCont}>
-                            <Button style={style.card}
-                                onClick={() => {
-                                    this.props.navigation.navigate('Checkout')
-                                }}
-                            >
+                            <Button style={style.card}>
                                 <Row>
                                     <Col style={{margin: 10}}>
                                         <Row>
@@ -73,25 +69,17 @@ export default class Landing extends React.Component {
                 <Row style={{height: '30%'}}>
                     <Col style={{alignSelf: "flex-end"}}>
                         <h4 style={{textAlign: 'end', margin: 10}}>
-                            Fresh Coffee on Demand! {/*'>'*/}
+                            Explore {'>'}
                         </h4>
                     </Col>
                 </Row>
 
                 <Row noGutters >
                     <Col style={style.btnCol}>
-                        <Button style={style.btn}
-                            onClick={() => {
-                                this.props.navigation.navigate('CoffeeListing')
-                            }}
-                        >Coffee</Button>
+                        <Button style={style.btn}>Coffee</Button>
                     </Col>
                     <Col style={style.btnCol}>
-                        <Button style={style.btn}
-                            onClick={() => {
-                                this.props.navigation.navigate('Personalize')
-                            }}
-                        >Personalized Coffee</Button>
+                        <Button style={style.btn}>Personalized Coffee</Button>
                     </Col>
                     <Col style={style.btnCol}>
                         <Button style={style.btn}
