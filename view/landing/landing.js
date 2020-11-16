@@ -10,6 +10,7 @@ import {
 } from 'react-bootstrap'
 
 import { styles } from '../style'
+import { App } from '../../App'
 
 export default class Landing extends React.Component {
     

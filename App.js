@@ -17,11 +17,11 @@ import Personalize from './view/personalized/personalize'
 
 const Stack = createStackNavigator();
 
-export default class App extends React.Component { 
+export default class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator headerMode='none'>
+        <Stack.Navigator headerMode={false}>
           <Stack.Screen
             name='Login'
             component={Login}

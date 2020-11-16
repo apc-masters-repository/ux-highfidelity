@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
 import { styles } from '../style'
+import logo from '../../assets/logo.png'; 
 
 export default class Login extends React.Component {
     state = {
@@ -11,6 +12,11 @@ export default class Login extends React.Component {
     render() {
         return (
         <View style={styles.container}>
+            <Image
+                source={{ uri: 'https://www.pngkey.com/png/full/22-225874_coffee-logo-png-vector-cafe.png'}}
+                style={{ width: 128,
+                    height: 128}}
+            />
             <Text style={styles.logo}>
             Coffefe
             </Text>

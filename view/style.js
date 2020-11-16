@@ -9,8 +9,9 @@ export const styles = {
     logo: { 
       fontWeight: 'bold',
       fontSize: 50,
-      color: '#fb5b5a',
-      marginBottom: 40
+      color: '#7C561E',
+      marginBottom: 40,
+      marginTop: 10
     },
     inputView: {
       width: "80%",
@@ -31,7 +32,7 @@ export const styles = {
     },
     loginBtn:{
       width:"80%",
-      backgroundColor:"#fb5b5a",
+      backgroundColor:"#7C561E",
       borderRadius:25,
       height:50,
       alignItems:"center",
