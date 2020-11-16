@@ -70,10 +70,9 @@ export const styles = {
       digestBtn: {
         width:100,
         height: 100,
-        backgroundColor:"#fb5b5a",
-        borderRadius:25,
-        justifyContent:"center",
-        alignItems:"center"
+        backgroundColor:"#7C561E",
+        borderColor:"#7C561E",
+        borderRadius:25
       },
       footer: {
         container: {
