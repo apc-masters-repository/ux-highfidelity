@@ -35,7 +35,7 @@ export default class Personalize extends React.Component {
                     <Col>
                         <TouchableOpacity
                             onPress={() => {
-                                this.props.navigation.navigate('CoffeeCreator')
+                                this.props.navigation.navigate('CoffeeListing')
                             }} >
                             <Row style={{color: 'white'}}>
                                 <h3 color='white'>Personalize your own Cofee</h3>
