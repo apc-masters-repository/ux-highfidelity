@@ -10,10 +10,26 @@ import {
     Image
 } from 'react-bootstrap'
 
+import Coffee from '../../model/coffee'
+
 // import {
 // } from 'react-native'
 
 import bg from '../../assets/landing-bg.png'
+
+import coffee1 from '../../assets/coffee-1.jpg'
+import coffee2 from '../../assets/coffee-2.jpg'
+import coffee3 from '../../assets/coffee-3.jpg'
+import coffee4 from '../../assets/coffee-4.jpg'
+import coffee5 from '../../assets/coffee-5.jpg'
+import coffee6 from '../../assets/coffee-6.jpg'
+import coffee7 from '../../assets/coffee-7.jpg'
+import coffee8 from '../../assets/coffee-8.jpg'
+import coffee9 from '../../assets/coffee-9.jpg'
+
+import btn1 from '../../assets/LFP-03.png'
+import btn2 from '../../assets/LFP-04.png'
+import btn3 from '../../assets/LFP-05.png'
 
 import { styles } from '../style'
 
@@ -34,13 +50,31 @@ export default class Landing extends React.Component {
             card: {
                 borderRadius:10,
                 width: '100%',
-                height: '100%'
+                height: '100%',
+                shadowColor: '#000',
+                shadowOffset: { width: 2, height: 2 },
+                shadowOpacity: 0.3,
+                shadowRadius: 2,
+                elevation: 5,
+                marginLeft: 5,
+                marginRight: 5,
+                marginTop: 10,
+                backgroundColor: "#7C561E",
+                borderColor: "#7C561E"
             }
         }
 
-        const cupLogo = 'https://i.ibb.co/s1HgDyz/LFP-03.png';
-        const beanLogo = 'https://i.ibb.co/JxCcCFk/LFP-04.png';
-        const storeLogo = 'https://i.ibb.co/LRrtM5D/LFP-05.png';
+        let coffees = []
+
+        coffees.push(new Coffee('Espresso', 'Heavily pressed coffee and super duper strong', coffee1, 'P150.00'))
+        coffees.push(new Coffee('Espresso', 'Heavily pressed coffee and super duper strong', coffee2, 'P250.00'))
+        // coffees.push(new Coffee('Espresso', 'Heavily pressed coffee and super duper strong', coffee3, 'P70.00'))
+        coffees.push(new Coffee('Espresso', 'Heavily pressed coffee and super duper strong', coffee4, 'P50.00'))
+        // coffees.push(new Coffee('Espresso', 'Heavily pressed coffee and super duper strong', coffee5, 'P210.00'))
+        coffees.push(new Coffee('Espresso', 'Heavily pressed coffee and super duper strong', coffee6, 'P120.00'))
+        coffees.push(new Coffee('Espresso', 'Heavily pressed coffee and super duper strong', coffee7, 'P170.00'))
+        coffees.push(new Coffee('Espresso', 'Heavily pressed coffee and super duper strong', coffee8, 'P190.00'))
+        coffees.push(new Coffee('Espresso', 'Heavily pressed coffee and super duper strong', coffee9, 'P130.00'))
 
         const alertClicked = () => {
             alert('You clicked the third ListGroupItem');
@@ -49,6 +83,7 @@ export default class Landing extends React.Component {
         const items = []
 
         for (var i = 0; i < 4; i++) {
+            let currCoffee = coffees[i];
             items.push(
                 <tr>
                     <td>
@@ -56,18 +91,25 @@ export default class Landing extends React.Component {
                             <Button style={style.card}
                                 onClick={() => {
                                     this.props.navigation.navigate('Checkout')
-                                }}
-                            >
-                                <Row>
-                                    <Col style={{margin: 10}}>
-                                        <Row>
-                                            <h5>This is a sample Title</h5>
-                                        </Row>
-                                        <Row>
-                                            This is a sample Description
-                                        </Row>
-                                    </Col>
-                                </Row>
+                                }}>
+                                <Col>
+                                    <Row>
+                                        <Col style={{height: 100}}>
+                                            <Image src={currCoffee.img} style={{width: 64, height: 64}}/>
+                                        </Col>
+                                        <Col>
+                                            <Row>
+                                                <h5>{currCoffee.name}</h5>
+                                            </Row>
+                                            <Row>
+                                                {currCoffee.desc}
+                                            </Row>
+                                        </Col>
+                                        <Col>
+                                            {currCoffee.price}
+                                        </Col>
+                                    </Row>
+                                </Col>
                             </Button>
                         </Col>
                     </td>
@@ -99,7 +141,7 @@ export default class Landing extends React.Component {
                                 this.props.navigation.navigate('CoffeeListing')
                             }}>
                                 
-                            <Image src={{uri: cupLogo}} style={{width:44 , height: 44}}/>
+                            <Image src={btn1} style={{width:44 , height: 44}}/>
                         </Button>
                     </Col>
                     <Col style={style.btnCol}>
@@ -108,7 +150,7 @@ export default class Landing extends React.Component {
                                 this.props.navigation.navigate('Personalize')
                             }}
                         >
-                            <Image src={{uri: beanLogo}} style={{width: 44, height: 44}}/>
+                            <Image src={btn2} style={{width: 44, height: 44}}/>
                         </Button>
                     </Col>
                     <Col style={style.btnCol}>
@@ -117,14 +159,14 @@ export default class Landing extends React.Component {
                                 this.props.navigation.navigate('ShopListing')
                             }}
                         >
-                            <Image src={{uri: storeLogo}} style={{width: 44, height: 44}}/>
+                            <Image src={btn3} style={{width: 44, height: 44}}/>
                         </Button>
                     </Col>
                 </Row>
                 
                 <Row >
                     <Table responsive >
-                    
+                            
                         {items}
                     
                     </Table>
